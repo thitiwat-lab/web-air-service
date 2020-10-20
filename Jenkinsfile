@@ -13,7 +13,7 @@ pipeline {
 cd frontend
 
 #install package
-npm install --registry http://192.168.10.170:4873
+npm install --registry http://178.128.123.20
 
 #run test
 npm run test
@@ -37,7 +37,7 @@ npm run export
 cd ../backend
 
 #install package
-npm install --registry http://192.168.10.170:4873
+npm install --registry http://178.128.123.20
 
 npm run build
 
