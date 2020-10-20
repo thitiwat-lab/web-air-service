@@ -13,7 +13,7 @@ pipeline {
 cd frontend
 
 #install package
-npm install --registry http://178.128.123.20
+npm install --registry http://192.168.10.170:4873
 
 #run test
 npm run test
@@ -37,7 +37,7 @@ npm run export
 cd ../backend
 
 #install package
-npm install --registry http://178.128.123.20
+npm install --registry http://192.168.10.170:4873
 
 npm run build
 
@@ -85,7 +85,7 @@ npm run build
             continueOnError: false, failOnError: true,
             publishers: [
               sshPublisherDesc(
-                configName: "test",
+                configName: "opendata",
                 verbose: true,
                 transfers: [
                   sshTransfer(
