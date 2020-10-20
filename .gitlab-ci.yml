@@ -3,8 +3,8 @@
   echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
   mkdir -p ~/.ssh
   chmod 700 ~/.ssh
-  ssh-keyscan 178.128.123.20 >> ~/.ssh/known_hosts
-  chmod 644 ~/.ssh/known_hosts
+  # ssh-keyscan 178.128.123.20 >> ~/.ssh/known_hosts
+  # chmod 644 ~/.ssh/known_hosts
 test:
   stage: deploy
   script:
@@ -12,7 +12,7 @@ test:
     - *init_ssh
     - ssh root@178.128.123.20 -C "cd /path/to/your-site/ && git pull"
   environment:
-    name: production
-    url: https://www.test.com
+    name: test
+    url: 178.128.123.20
   only:
     - master
