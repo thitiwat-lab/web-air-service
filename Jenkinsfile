@@ -85,7 +85,7 @@ npm run build
             continueOnError: false, failOnError: true,
             publishers: [
               sshPublisherDesc(
-                configName: "opendata",
+                configName: "test",
                 verbose: true,
                 transfers: [
                   sshTransfer(
