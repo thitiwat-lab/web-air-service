@@ -1,0 +1,7 @@
+export const AUTH_LOGIN_MESSAGE = 'username and password incorrect.'
+export const AUTH_VERIRY_MESSAGE = 'account is not verify.'
+export const AUTH_INACTIVE_MESSAGE = 'account is reject.'
+export const AUTH_BLOCK_MESSAGE = 'account is ban.'
+export const AUTH_MAIL_EXISTS = 'email already exists.'
+export const AUTH_FORGOT_EMAIL = 'email not found.'
+export const AUTH_TOKEN_EXPIRE = 'Token invalidated or Token expired.'
