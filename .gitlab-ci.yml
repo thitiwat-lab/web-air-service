@@ -6,9 +6,7 @@
   ssh-keyscan 178.128.123.20 >> ~/.ssh/known_hosts
   chmod 644 ~/.ssh/known_hosts
 production:
-stages:
-  build
-  deploy
+stages: deploy
   script:
     - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
     - *init_ssh
