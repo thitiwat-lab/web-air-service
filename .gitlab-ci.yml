@@ -7,8 +7,8 @@
   chmod 644 ~/.ssh/known_hosts
 production:
 stages:
-  - build
-  - deploy
+  build
+  deploy
   script:
     - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
     - *init_ssh
