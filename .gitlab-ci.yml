@@ -3,7 +3,7 @@
   echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
   mkdir -p ~/.ssh
   chmod 700 ~/.ssh
-  ssh-keyscan https://gitlab.com >> ~/.ssh/known_hosts
+  ssh-keyscan 178.128.123.20 >> ~/.ssh/known_hosts
   chmod 644 ~/.ssh/known_hosts
 production:
   stage: deploy
