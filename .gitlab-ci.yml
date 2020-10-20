@@ -15,4 +15,4 @@ production:
     name: test
     url: 178.128.123.20
   only:
-    - developer
+    - master
