@@ -76,11 +76,11 @@ export default () =>{
                         <p className="text-title" >แบนเนอร์โปรโมชั่น</p>
                     </div>
                     <div className="card-body">
-                            {/* <div className="row mt-3 ml-4">
+                            <div className="row mt-3 ml-4">
                                      <button className="btn btn-light" onClick={toggle} >
                                         <i className="fas fa-plus-circle"></i> เพิ่ม
-                                    </button> *
-                                </div> */}
+                                    </button>
+                                </div>
                         <div className="col mt-2">
                             <div className="col-md-12 table-responsive">
                                 <table className="table table-ml table-bordered table-striped table-hover mt-3">
