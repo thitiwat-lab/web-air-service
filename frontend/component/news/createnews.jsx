@@ -40,38 +40,20 @@ const ModalCreate = props =>{
 
     const Closemodel = () =>{
         clearError()
-        setValue('newstitle', '')
         setValue('detail', '')
         setValue('name', '')
         props.CloseModal()
     }
     const setVal = () =>{
-        setValue('newstitle', '')
         setValue('detail', '')
         setValue('name', '')
         props.CloseModal()
     }
-    const sub = handleSubmit(async value=>{
-      try{
-          const {data} = await CreateNews(
-            value.newstitle,
-            value.detail,
-          )
-        if(data.code === 'OK'){
-          props.getnews()
-          clearError()
-          setVal()
-        }
-      }catch(error){
-        console.log(error)
-            HandleAuth(error)
-          }
-    })
+
     const onSubmit = async () =>{
         try{
           const df = new FormData()
           df.append('filedname',images)
-          df.append('newstitle',titles)
           df.append('detail',details)
           await axios({
             url:'http://localhost:3001/news/upload',
@@ -110,20 +92,6 @@ React.useEffect(()=>{
                     <ModalHeader>เพิ่มข่าวประชาสัมพันธ์</ModalHeader>
                     <div className="modal-body">
                           <div className="row">
-                            <div className="col-md-12 mt-2">
-                              <label htmlFor="Newstitle" className="mr-sm-2">
-                                หัวข้อข่าว
-                              </label>
-                                <input
-                                type="text"
-                                className={classnames('Selectd form-control',{ 'is-invalid': !!errors.newstitle })}
-                                name="newstitle"
-                                id="newstitle"
-                                onChange={onchangetitle}
-                                ref={register}
-                              />
-                              <div className="invalid-feedback">{errors.newstitle && errors.newstitle.message}</div>
-                            </div>
                             <div className="col-md-12">
                                 <label htmlFor="name" className="mr-sm-2 mt-2">รูปภาพ</label>
                                     <div className="row">

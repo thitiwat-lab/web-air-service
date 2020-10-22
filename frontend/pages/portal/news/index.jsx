@@ -77,11 +77,11 @@ export default () =>{
                         <p className="text-title" >รายละเอียดการให้บริการ</p>
                     </div>
                     <div className="card-body">
-                        {/* <div className="row mt-5 ml-4">
+                        <div className="row mt-3 ml-4">
                             <button className="btn btn-light" onClick={toggle} >
                                 <i className="fas fa-plus-circle"></i> เพิ่ม
                             </button>
-                        </div> */}
+                        </div>
                         {/* <div className="row ml-3 mt-3">
                             <div className="col-md-2">
                                 <label className="mb-0 ">ค้นหา</label>

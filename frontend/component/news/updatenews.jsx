@@ -22,21 +22,19 @@ const ModalUpdate = props =>{
     // const [details, setDetails] = useState(null)
     // const [titles, setTitles] = useState(null)
     const [details, setDetails] = useState('')
-    
-    const onchangetitle = (e) =>{
-      setTitles(e.target.value)
-    }
+    const [test, setTest] = useState('')
+    console.log(test)
+    console.log(details)
+
     const onChange = (e) =>{
       setDetails(e.target.value)
     }
-// console.log(titles)
 
     const getimage = (event) =>{
         setImages(event.target.files[0])
         if (event.target.files[0]) {
             const reader = new FileReader();
             reader.addEventListener("load", () => {
-                // console.log(reader.result)
               setImgData(reader.result);
             })
             reader.readAsDataURL(event.target.files[0]);
@@ -47,11 +45,9 @@ const ModalUpdate = props =>{
               if (props.newsId) {
                 const { data } = await GetIdNews(props.newsId)
                 if (data.code === 'OK') {
-                    // setValue('newstitle', data.results.newstitle)
+                  setTest(data.results.detail)
                     setValue('detail', data.results.detail)
                     setValue('name', data.results.name)
-                    // setTitles(data.results.newstitle)
-                    // setDetails(data.results.detail)
                 } else {
                   props.messErr()
                 }
@@ -63,7 +59,6 @@ const ModalUpdate = props =>{
         // close modal
         const Close = () => {
             clearError()
-            // setValue('newstitle', '')
             setValue('detail', '')
             setValue('name', '')
             props.Closeupdate()
@@ -72,8 +67,7 @@ const ModalUpdate = props =>{
             try{
               const df = new FormData()
               df.append('filedname',images)
-              // df.append('newstitle',titles)
-              df.append('detail',details)
+              df.set('detail',details || test)
               await axios({
                 url:'http://localhost:3001/news/' + props.newsId,
                 method:'put',
@@ -92,7 +86,6 @@ const ModalUpdate = props =>{
               Close()
              })
             }catch (error) {
-              console.log(error)
         HandleAuth(error)
       }
     }
@@ -125,7 +118,6 @@ const ModalUpdate = props =>{
                                 <div className="mt-2 text-center">
                                     <img src={imgData} alt="" className="border mt-1" style={{width:'450px', height:'270px'}} ref={register}/>
                                 </div>
-                            {/* <div className="invalid-feedback">{errors.lastname && errors.lastname.message}</div> */}
                             </div>
                             <div className="col-md-12">
                               <label htmlFor="Detail" className="mr-sm-2 mt-2">
