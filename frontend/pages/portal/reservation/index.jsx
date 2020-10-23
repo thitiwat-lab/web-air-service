@@ -168,7 +168,7 @@ export default () => {
               <p className="text-title" >การจองคิว</p>
               </div>
             <div className="cars-body">
-              <div className="row mt-3 ml-4">
+              <div className="row head-reservation">
                 <button className="btn btn-light bt-reservation1" onClick={toggle}  >
                       <i className="fas fa-plus-circle"></i> เพิ่มการจองคิว
                   </button>
@@ -179,7 +179,7 @@ export default () => {
                       <i className="fas fa-plus-circle"></i> เพิ่มพิกัดบ้านลูกค้า 
                   </button>
                   </div>
-              <div className="row ml-3 mt-2">
+              <div className="row head-search">
                 <div className="col-md-2">
                   <label className="mb-0 ">ค้นหา</label>
                   <input

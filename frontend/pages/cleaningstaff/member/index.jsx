@@ -108,7 +108,7 @@ const handle = (event) => {
             <div className="card-header span-a ">
                         <p className="text-title" >ข้อมูลลูกค้า</p>
                     </div>
-              <div className="row ml-2 mt-3">
+              <div className="row head-search">
                 <div className="col-md-2">
                   <label className="mb-0 ">ค้นหา</label>
                   <input type="text" className="Selectd form-control" placeholder="กรุณากรอกชื่อเพื่อค้นหา" name="firstname" onChange={handle}/>
@@ -122,6 +122,7 @@ const handle = (event) => {
                     </button>
                   </div>
               </div>
+              <div className="col">
               <div className="col-md-12 table-responsive">
                         <table className="table table-ml table-bordered table-striped table-hover mt-3">
                           <thead>
@@ -161,6 +162,7 @@ const handle = (event) => {
                       </table>
                 </div>
               </div>
+            </div>
             </div>
         </PortalTemplate>
     )

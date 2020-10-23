@@ -1467,13 +1467,9 @@ margin-left: 10px;
     margin-top: -2px;
   }
   .span-a {
-    position: absolute;
-    width: 250px;
-    top: -20px;
     height: 40px;
-    z-index: 15px;
-    padding: 5px;
     margin-top:10px;
+    text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
   }
   .font-sz{
@@ -1578,4 +1574,29 @@ margin-left: 10px;
         height: auto;
         // margin-bottom: 20px;
       }
+}
+
+
+// style header plate staff
+
+.head-reservation{
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 28px;
+}
+.head-search{
+  margin-left: 15px;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .head-reservation{
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .head-search{
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
 }

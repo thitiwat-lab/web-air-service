@@ -86,12 +86,12 @@ export default () => {
                         <p className="text-title" >โปรโมชั่น</p>
                     </div>
             <div className="cars-body">
-              <div className="row mt-3 ml-4">
+              <div className="row head-reservation">
                   <button className="btn btn-light" onClick={toggle} >
                       <i className="fas fa-plus-circle"></i> เพิ่ม
                   </button>
                   </div>
-              <div className="row ml-3 mt-2">
+              <div className="row head-search">
                 <div className="col-md-2">
                   <label className="mb-0 ">ค้นหา</label>
                   <input type="text" className="Selectd form-control" placeholder="กรุณากรอกชื่อโปรโมชั่นเพื่อค้นหา" name="promotion_name" onChange={handle} />

@@ -74,7 +74,7 @@ useEffect(() => {
                         <p className="text-title" >รายงานรายรับรายจ่าย</p>
                     </div>
             <div className="cars-body">
-            <div className="row ml-3 mt-2">
+            <div className="row head-search">
                 <div className="col-md-2">
                   <label className="mb-0 ">ค้นหารายวัน</label>
                   <input

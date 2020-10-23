@@ -114,7 +114,7 @@ export default () => {
                       <i className="fas fa-plus-circle"></i> เพิ่ม
                   </button>
                   </div> */}
-              <div className="row ml-3 mt-3">
+              <div className="row head-search">
                 <div className="col-md-2">
                   <label className="mb-0 ">ค้นหา</label>
                   <input type="text" className="Selectd form-control" placeholder="กรุณากรอกชื่อเพื่อค้นหา" name="firstname" onChange={handle}/>

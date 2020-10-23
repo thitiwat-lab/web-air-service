@@ -106,12 +106,12 @@ export default () => {
                         <p className="text-title" >ข้อมูลพนักงาน</p>
                     </div>
             <div className="cars-body">
-              <div className="row mt-3 ml-4">
+              <div className="row head-reservation">
                   <button className="btn btn-light" onClick={toggle}>
                       <i className="fas fa-plus-circle"></i> เพิ่ม
                   </button>
                   </div>
-              <div className="row ml-2 mt-2">
+              <div className="row head-search">
                 <div className="col-md-2">
                   <label className="mb-0 ">ค้นหา</label>
                   <input type="text" className="Selectd form-control" placeholder="กรุณากรอกอีเมลพื่อค้นหา" name="email" onChange={handle} />
@@ -122,6 +122,7 @@ export default () => {
                     </button>
                   </div>
               </div>
+              <div className="col">
               <div className="col-md-12 table-responsive">
                         <table className="table table-ml table-bordered table-striped table-hover mt-3">
                           <thead>
@@ -168,6 +169,7 @@ export default () => {
                 </div>
               </div>
             </div>
+          </div>
     </Homeplate>
   )
 }
