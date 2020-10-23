@@ -42,24 +42,27 @@ export default ({ children, title = 'Air Condition' }) => {
         
     </Head>
       <nav className="navbar navbar-expand-lg nb">
-          <div className="col-md-4 mt-1 ml-5" >
-                <a className="navbar-brand cotext mt-1" style={{color:'#FFFFFF', fontSize:22}} href={'/'}>บริษัทวีซีแอร์เซอร์วิส</a>
-          </div>
+          {/* <div className="col-md-4 mt-1" > */}
+                <a className="navbar-brand cotext mt-1 home-test" href={'/'}>บริษัทวีซีแอร์เซอร์วิส</a>
+          {/* </div> */}
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="fas fa-bars"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown" >
-            <div className="col-md-11">
+            <div className="row">
+              <div className="col-md-4"></div>
+            <div className="col-md-7">
               <ul className="navbar-nav">
                 <LinkActive1 title="หน้าหลัก" to={'/'} />
                 <LinkActive1 title="โปรโมชั่น" to="/home/news"/>
                 <LinkActive1 title="รายการจองคิว" to="/home/repostreservation" />
               </ul>
             </div>
-          <div className="col-md-1 text-center">
-          <i className="fas fa-user fa-stack1 iconh" style={{fontSize:'24px'}} onClick={Login}></i>
+          <div className="col-md-1">
+          <i className="fas fa-user fa-stack1 iconh mt-3 icon-nev" style={{fontSize:'24px'}} onClick={Login}></i>
             </div>         
         </div> 
+        </div>
     </nav>
     <div className="info">
          {children}

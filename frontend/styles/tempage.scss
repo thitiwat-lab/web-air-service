@@ -503,6 +503,7 @@ margin: 0px 2px 0px 0px;
 
 .button01{
   background-color: rgb(193, 230, 252); /* Green */
+  // margin-left: 10px;
   border: none;
   color: white;
   padding: 8px 35px;
@@ -510,7 +511,6 @@ margin: 0px 2px 0px 0px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 2px 0px 0px 0px;
   transition-duration: 0.4s;
   cursor: pointer;
 }
@@ -577,8 +577,16 @@ margin: 0px 2px 0px 0px;
 //   width: auto;
 //   height: 940px;
 // }
-
+.icon-nev{
+  margin-left: 5px;
+}
 @media (min-width:500px){
+  // .button01{
+  //   margin-left: 200px;
+  // }
+  .icon-nev{
+    margin-left: 60px;
+  }
   .cards{
     margin-top: 50px;
     margin-left: 20px;
@@ -640,14 +648,24 @@ margin: 0px 2px 0px 0px;
 }
 .cardimg01{
   margin-left: 0px;
-  width:  auto;
+  width:  270px;
   height: 200px;
 }
 .cardfont{
   font-size:18px;
 }
-
+.home-test{
+  font-size: 18px;
+  color: #FFFFFF;
+}
+// .nav-test{
+//   left: 80px;
+// }
 @media (min-width:500px){
+  .home-test{
+    font-size: 22px;
+    color: #FFFFFF;
+  }
   .text{
     font-size:34px;
     margin-top: 180px;

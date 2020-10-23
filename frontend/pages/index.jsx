@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Frontend from '../component/layouts/homeplate'
+import{Linkfooter} from '../component/app/menu/linkfooter'
 
 import {GetNews} from '../service/news'
 
@@ -44,8 +45,8 @@ React.useEffect(()=>{
               <div className="row">
                 <div className="col-md-4">
                 <div className="card">
-                    <a href="/home/clean">
-                          <img src={"http://localhost:3001/news/imgpath/" + metadata}  className="card-img-top cardimg" alt="..."/>
+                    <a href="home/clean">
+                          <img src={"http://localhost:3001/news/imgpath/" + metadata} className="card-img-top cardimg" alt="..."/>
                     </a>
                   <div className="card-body " style={{height:'260px'}}>
                     <h4>บริการล้างเครื่องปรับอากาศ</h4><hr/>
@@ -55,7 +56,7 @@ React.useEffect(()=>{
                 </div>
                 <div className="col-md-4">
                 <div className="card">
-                  <a href="/home/repair">
+                  <a href="home/repair">
                         <img src={"http://localhost:3001/news/imgpath/" + metadata02}  className="card-img-top cardimg" alt="..."/>
                   </a>
                   <div className="card-body" style={{height:'260px'}}>
@@ -66,7 +67,7 @@ React.useEffect(()=>{
                 </div>
                 <div className="col-md-4">
                 <div className="card">
-                  <a href="/home/installair">
+                  <a href="home/installair">
                       <img src={"http://localhost:3001/news/imgpath/" + metadata04} className="card-img-top cardimg" alt="..."/>
                   </a>
                   <div className="card-body" style={{height:'260px'}}>
