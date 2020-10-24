@@ -56,12 +56,12 @@ export default () => {
                     </div>
                     <div className="col-md-7"></div>
                     <div className="col-md-3">
-                      <a href="/home/repostreservation">
+                      <a href={"/home/repostreservation"}>
                       <button className="btn btn-primary">
                         &lt; ปฏิทินการจองคิว
                       </button>
                     </a>
-                    <a href="/home/listreservation">
+                    <a href={"/home/listreservation"}>
                     <button className="btn btn-primary">
                       ตารางการจองคิว &gt;
                     </button>
