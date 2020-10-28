@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Homeplate from '../../../component/layouts/homeplate'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 
 // internal
 import {GetResrvation} from '../../../service/reservation'
@@ -80,16 +81,16 @@ export default () => {
                 <div className="col-md-7"></div>
                 <div className="col-md-3">
                 <div className="btn-group ml-3">
-                <a href={"/home/repostreservation"}>
+                <Link href={"/home/repostreservation"}>
                     <button className="btn btn-primary">
                       &lt; ปฏิทินการจองคิว
                     </button>
-                  </a>
-                  <a href={"/home/listreservation"}>
+                  </Link>
+                  <Link href={"/home/listreservation"}>
                   <button className="btn btn-primary">
                     ตารางการจองคิว &gt;
                   </button>
-                  </a>
+                  </Link>
                 </div>
               </div>
               </div>

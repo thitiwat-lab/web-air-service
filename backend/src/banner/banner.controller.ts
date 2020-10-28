@@ -15,8 +15,12 @@ import {editFileName, imageFileFilter} from './config'
 export class BannerController {
     constructor(private readonly BannerService:BannerService){}
     @Get('images/:id')
-    seeUploadedFile(@Param('id') image, @Res() res) {
-      return res.sendFile(image, { root:'./files'});
+    seeUploadedFile(@Param('id') image, @Res() res):Promise<any> {
+        try{
+      return res.sendFile(image, { root:'./upload/file'});
+        }catch(error){
+            throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
     }
     @Get()
     async getBanner():Promise<any>{
@@ -44,7 +48,7 @@ export class BannerController {
      @UsePipes(new ValidationPipe(BannerCreateValidate))
     @UseInterceptors(FileInterceptor('filedname', {
             storage: diskStorage({
-              destination: './files',
+              destination: './upload/file',
               filename: editFileName,
             }),
             fileFilter: imageFileFilter,
@@ -78,7 +82,7 @@ export class BannerController {
     // @UsePipes(new ValidationPipe(BannerUpdateValidate))
     @UseInterceptors(FileInterceptor('filedname', {
         storage: diskStorage({
-          destination: './files',
+          destination: './upload/file',
           filename: editFileName,
         }),
         fileFilter: imageFileFilter,

@@ -19,7 +19,6 @@ export default () => {
           zoom: zoom
         })
         var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-          
           "<h6>"+'<b>ที่ตั้งบริษัท:</b> ตึก6การเคหะนวมินทร์ เลขที่ 817/02 ซ.นวมินทร์139 แขวงนวลจันทร์เขตบึงกุ่ม กรุงเทพมหานคร 10230 '+"</h6>"
             );
           var marker = new mapboxgl.Marker({})

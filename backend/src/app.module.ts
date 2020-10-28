@@ -23,15 +23,15 @@ import { MulterModule } from '@nestjs/platform-express';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client'),
+      rootPath: join(__dirname, '..', './upload'),
     }),
     MulterModule.register({
-      dest: './files',
+      dest: './upload/file',
     }),
     MulterModule.register({
-      dest: './filesnews',
+      dest: ' ./upload/file/news',
     }),
-    MongooseModule.forRoot('mongodb://localhost/test'),
+    MongooseModule.forRoot('mongodb://localhost:27017/test'),
     ReservationsModule,
     NewsModule,
     AirconditioningModule,

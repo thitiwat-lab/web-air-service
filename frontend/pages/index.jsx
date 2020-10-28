@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Frontend from '../component/layouts/homeplate'
 import{Linkfooter} from '../component/app/menu/linkfooter'
+import Link from 'next/link'
 
 import {GetNews} from '../service/news'
 
@@ -12,7 +13,7 @@ export default () => {
   const [metadata03, setMetadata03] = useState('')
   const [metadata04, setMetadata04] = useState('')
   const [metadata05, setMetadata05] = useState('')
-
+  
   const getnews =async () =>{
     const { data } =await GetNews()
     if(data.code === 'OK'){
@@ -31,34 +32,38 @@ React.useEffect(()=>{
   return (
     <Frontend>
       <div style={{backgroundColor:'#ffffff'}} >
-        <div className="container fluid border shadow-sm p-3" style={{ background: 'url(02.jpg)'}}>
-          <div className="row">
-            <div className="col-md-3 ">
+        <div className="container fluid ">
+          <div className="card text-center">
+              <img src="02.jpg" className="card-img card-img-h" alt="..." />
+            <div className="card-img-overlay">
+                <p className="text card-title">บริษัทวีซีแอร์เซอร์วิส</p>
+                <p className="text-1 card-title">ศูนย์บริการ ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ </p>
+              </div>
             </div>
-            <div className="col-md-6 text-center ">
-              <p className="text">บริษัทวีซีแอร์เซอร์วิส</p>
-              <p className="text-1">ศูนย์บริการ ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ </p><hr/>
-            </div>
-          </div>
-        </div>
+           </div>
             <div className="container mt-5">
               <div className="row">
                 <div className="col-md-4">
                 <div className="card">
-                    <a href={"home/clean"}>
-                          <img src={"http://localhost:3001/news/imgpath/" + metadata} className="card-img-top cardimg" alt="..."/>
-                    </a>
+                    <Link href={"home/clean"}>
+                          <img 
+                          // src={"http://159.89.195.62:3001/api/news/imgpath/" + metadata} 
+                          className="card-img-top cardimg" alt="..."/>
+                    </Link>
                   <div className="card-body " style={{height:'260px'}}>
-                    <h4>บริการล้างเครื่องปรับอากาศ</h4><hr/>
+                    <h4>บริการล้างเครื่องปรับอากาศ</h4><hr/>  
                       <p className="cardfont">{metadata01}</p>
                   </div>
                 </div>
                 </div>
                 <div className="col-md-4">
                 <div className="card">
-                  <a href={"home/repair"}>
-                        <img src={"http://localhost:3001/news/imgpath/" + metadata02}  className="card-img-top cardimg" alt="..."/>
-                  </a>
+                  <Link href={"home/repair"}>
+                        <img 
+                        // src={"http://159.89.195.62:3001/api/news/imgpath/" + metadata02}  
+                        className="card-img-top cardimg" alt="..."
+                        />
+                  </Link>
                   <div className="card-body" style={{height:'260px'}}>
                   <h4>บริการซ่อมเครื่องปรับอากาศ</h4><hr/>
                     <p className="cardfont">{metadata03}</p>
@@ -67,9 +72,11 @@ React.useEffect(()=>{
                 </div>
                 <div className="col-md-4">
                 <div className="card">
-                  <a href={"home/installair"}>
-                      <img src={"http://localhost:3001/news/imgpath/" + metadata04} className="card-img-top cardimg" alt="..."/>
-                  </a>
+                  <Link href={"home/installair"}>
+                      <img 
+                      // src={"http://159.89.195.62:3001/api/news/imgpath/" + metadata04}
+                       className="card-img-top cardimg" alt="..."/>
+                  </Link>
                   <div className="card-body" style={{height:'260px'}}>
                   <h4>บริการติดตั้งเครื่องปรับอากาศ</h4><hr/>
                     <p className="cardfont" >{metadata05}</p>

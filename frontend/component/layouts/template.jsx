@@ -10,7 +10,7 @@ import'../../styles/main.scss'
 import {GetIDuser} from '../../service/auth'
 
 
-export default ({ children, title = 'Air Condition' }) => {
+export default ({ children, title = 'Air Condition Center' }) => {
 
   const[userid, setUserid] = useState([])
   const [iddata, setIddata] = useState({})
@@ -88,10 +88,11 @@ export default ({ children, title = 'Air Condition' }) => {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="js/reactjs/main.js" type = "text/babel"></script>
   </Head>
 
 <nav className="sb-topnav navbar-expand navbar bg-header">
-    <a className="navbar-brand" href="" style={{color:'#ffffff'}}>บริษัทวีซีแอร์เซอร์วิส</a>
+    <a className="navbar-brand"  style={{color:'#ffffff'}}>บริษัทวีซีแอร์เซอร์วิส</a>
     <button className="btn btn-sm " style={{fontSize:'24px'}} id="sidebarToggle" onClick={open1}><i className="fas fa-bars"></i></button>
     <div className="navbar-nav1">
     <div className="dropdown">

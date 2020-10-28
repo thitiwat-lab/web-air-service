@@ -6,7 +6,5 @@ export class RegisterDto {
     readonly passwordConfirm: string
     readonly tel:string
     readonly address:string
-    readonly lat:string
-    readonly lng:string
     readonly status:string
   }

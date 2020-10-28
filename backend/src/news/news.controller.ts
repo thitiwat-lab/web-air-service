@@ -18,8 +18,12 @@ export class NewsController {
     constructor(private readonly NewsService:NewsService){}
 
     @Get('imgpath/:id')
-    seeUploadedFile(@Param('id') image, @Res() res) {
-      return res.sendFile(image, { root: './filesnew' });
+     seeUploadedFile(@Param('id') image, @Res() res):Promise<any>{
+        try{
+      return res.sendFile(image, { root: './upload/file/news' });
+        }catch(error){
+            throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
     }
     @Get()
     async listnews():Promise<any>{
@@ -49,7 +53,7 @@ export class NewsController {
     // @UsePipes(new ValidationPipe(NewsCreateValidate))
     @UseInterceptors(FileInterceptor('filedname', {
         storage: diskStorage({
-          destination: './filesnew',
+          destination: './upload/file/news',
           filename: editFileName,
         }),
         fileFilter: imageFileFilter,
@@ -80,7 +84,7 @@ export class NewsController {
     @Put(':id')
     @UseInterceptors(FileInterceptor('filedname', {
         storage: diskStorage({
-          destination: './filesnew',
+          destination: './upload/file/news',
           filename: editFileName,
         }),
         fileFilter: imageFileFilter,

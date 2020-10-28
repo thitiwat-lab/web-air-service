@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
+import Link from 'next/link'
 
 import {CreateHeaders} from '../../../service/config'
 import Homeplate from '../../../component/layouts/homeplate'
@@ -10,7 +11,7 @@ export default () => {
   const [countries, setCountries] = useState([]);
     useEffect( () => {
        axios({
-        url:'http://localhost:3001/reservations',
+        url:'http://159.89.195.62:3001/api/reservations',
         method:'get',
       ...CreateHeaders({}, {
         json: true,
@@ -56,16 +57,16 @@ export default () => {
                     </div>
                     <div className="col-md-7"></div>
                     <div className="col-md-3">
-                      <a href={"/home/repostreservation"}>
+                      <Link href="/home/repostreservation">
                       <button className="btn btn-primary">
                         &lt; ปฏิทินการจองคิว
                       </button>
-                    </a>
-                    <a href={"/home/listreservation"}>
+                    </Link>
+                    <Link href="/home/listreservation">
                     <button className="btn btn-primary">
                       ตารางการจองคิว &gt;
                     </button>
-                    </a>
+                    </Link>
                     </div>
                   </div>
                   

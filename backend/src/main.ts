@@ -6,9 +6,11 @@ import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use('/files', express.static(join(__dirname, '..', 'client')));
+  app.use('/upload/file/news', express.static(join(__dirname, '..', './upload')));
+  app.use('/upload/file', express.static(join(__dirname, '..', './upload')));
   app.enableCors()
   app.useGlobalFilters(new HttpExceptionFilter())
-  app.listen(3001);
+  // app.setGlobalPrefix('/api')
+  await app.listen(3001);
 }
 bootstrap();

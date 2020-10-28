@@ -34,8 +34,8 @@ export default () => {
   }
 
   const textstatus = {
-    ใช้งาน:<p className="text-success"><i className="fas fa-circle" style={{fontSize:'1px'}}></i> ใช้งาน</p>,
-    ไม่ใช้งาน:<p className="text-danger"><i className="fas fa-circle" style={{fontSize:'1px'}}></i> ไม่ใช้งาน</p>
+    use:<p className="text-success"><i className="fas fa-circle" style={{fontSize:'1px'}}></i> ใช้งาน</p>,
+    notuse:<p className="text-danger"><i className="fas fa-circle" style={{fontSize:'1px'}}></i> ไม่ใช้งาน</p>
   }
 
   //modal update 

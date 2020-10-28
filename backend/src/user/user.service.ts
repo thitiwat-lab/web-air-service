@@ -33,7 +33,7 @@ export class UserService {
         const now = moment().utc().format()
           const model = await new this.UserModel({
            ...body,
-           status:'ใช้งาน',
+           status:'use',
            createuser_date:now,
            updateuser_date:now
         })
@@ -73,7 +73,7 @@ export class UserService {
         .format()
         const model = await new this.UserModel({
           ...body,
-          status:'ใช้งาน',
+          status:'use',
           userrights:'admin',
           createuser_date:now,
           updateuser_date:now

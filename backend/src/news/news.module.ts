@@ -27,14 +27,4 @@ import {AuthService} from '../auth/auth.service'
     controllers:[NewsController],
     providers:[NewsService, AuthService, UserService],
 })
-export class NewsModule implements NestModule {
-    public configure(consumer: MiddlewareConsumer){
-        consumer.apply(Middleware).forRoutes(
-            {path: 'news', method:RequestMethod.GET},
-            {path: 'news/:id', method:RequestMethod.GET},
-            {path: 'news/upload', method:RequestMethod.POST },
-            {path: 'news/:id', method:RequestMethod.PUT},
-            {path: 'news/:id', method:RequestMethod.DELETE},
-        )
-    }
-}
+export class NewsModule {}

@@ -37,14 +37,4 @@ import { join } from 'path';
   providers: [BannerService , AuthService, UserService],
   controllers: [BannerController]
 })
-export class BannerModule implements NestModule {
-  public configure(consumer: MiddlewareConsumer){
-    consumer.apply(Middleware).forRoutes(
-      {path: 'banner', method:RequestMethod.GET},
-      {path: 'banner/:id', method:RequestMethod.GET},
-      {path: 'banner/upload', method:RequestMethod.POST },
-      {path: 'banner/:id', method:RequestMethod.PUT},
-      {path: 'banner/:id', method:RequestMethod.DELETE},
-    )
-  }
-}
+export class BannerModule {}

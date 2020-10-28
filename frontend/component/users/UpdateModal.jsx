@@ -153,8 +153,8 @@ const UpdateModal = props => {
                     สถานะ
                   </label>
                   <select name="status" className="form-control" id="Status" ref={register}>
-                    <option value="ใช้งาน">ใช้งาน</option>
-                    <option value="ไม่ใช้งาน">ไม่ใช้งาน</option>
+                    <option value="use">use(ใช้งาน)</option>
+                    <option value="notuse">not use(ไม่ใช้งาน)</option>
                   </select>
                   <div className="invalid-feedback">{errors.status && errors.status.message}</div>
                 </div>

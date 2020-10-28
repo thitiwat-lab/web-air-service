@@ -29,7 +29,7 @@ const LoginPage = () => {
           localStorage.auth0 = data.token.status
           localStorage.auth1 = data.token.tel
           setTimeout(() => {
-            if(data.token.status === 'ใช้งาน'){
+            if(data.token.status === 'use'){
               setSuccessMsg(true)
               if(data.token.userrights === "admin"){
                 Router.push('/admin')
@@ -49,7 +49,7 @@ const LoginPage = () => {
         }
       })
       React.useEffect(() => {
-        if(localStorage.auth0 === 'ใช้งาน'){
+        if(localStorage.auth0 === 'use'){
           if(localStorage.auth === 'admin' ) {
             Router.push('/admin')
           }
@@ -60,9 +60,9 @@ const LoginPage = () => {
             Router.push('/cleaningstaff/reportreservation')
           }
         }
-        // else{
-        //   Router.push('/portal/auth/login')
-        // }
+        else{
+          Router.push('/portal/auth/login')
+        }
       }, [])
     return(
   <AuthLayout>

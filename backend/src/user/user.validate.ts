@@ -24,7 +24,7 @@ export const UserUpdateValidate = Joi.object()
     address: Joi.string().required(),
     tel: Joi.string().max(10).min(10).required(),
     status: Joi.string()
-    .valid('ใช้งาน','ไม่ใช้งาน')
+    .valid('use','notuse')
     .required(),//staff, admin
     userrights: Joi.string().required(),
 })

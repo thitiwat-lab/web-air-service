@@ -8,7 +8,7 @@ import {LinkActive} from '../app/menu/link'
 import {HandleAuth} from '../../service/config'
 import {GetUseronce} from '../../service/users'
 
-export default ({ children, title = 'Air Condition' }) => {
+export default ({ children, title = 'Air Condition Center' }) => {
   const [iddata, setIddata] = useState({})
   const[userid, setUserid] = useState([])
 
@@ -85,9 +85,10 @@ useEffect(() => {
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="js/reactjs/main.js" type = "text/babel"></script>
       </Head>
       <nav className="sb-topnav navbar-expand navbar bg-header">
-        <a className="navbar-brand" href="" style={{color:'#ffffff'}}>บริษัทวีซีแอร์เซอร์วิส</a>
+        <a className="navbar-brand"  style={{color:'#ffffff'}}>บริษัทวีซีแอร์เซอร์วิส</a>
         <button className="btn btn-sm " style={{fontSize:'24px'}} id="sidebarToggle" onClick={open1}><i className="fas fa-bars"></i></button>
         <div className="navbar-nav1">
         <div className="dropdown">
