@@ -48,7 +48,7 @@ const onSubmit = handleSubmit(async values => {
         className={classnames('modal fade animated', { 'show fadeInDown': props.modal })}
         style={{ display: props.modal ? 'block' : 'none', overflowY: 'auto' }}
       >
-        <div className="modal-dialog" role="document">
+        <div className="modal-dialog modal-box-shadown" role="document">
           <div className="modal-content">
             <Form onSubmit={onSubmit}>
               <ModalHeader>Airconditioning</ModalHeader>

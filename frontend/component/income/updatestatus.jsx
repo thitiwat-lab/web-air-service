@@ -39,7 +39,7 @@ const UpdateStatus = props =>{
         className={classnames('modal fade animated', { 'show fadeInDown': props.updatestatus })}
         style={{ display: props.updatestatus ? 'block' : 'none' }}
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-box-shadown">
           <div className="modal-content">
           <Form onSubmit={onSubmit}>
             <ModalHeader className="mt-3"></ModalHeader>

@@ -68,7 +68,7 @@ const ShowMaps = props =>{
         className={classnames('modal fade animated', { 'show fadeInDown': props.modelshow })}
         style={{ display: props.modelshow ? 'block' : 'none', overflowY: 'auto' }}
       >
-          <div className="modal-dialog" role="document">
+          <div className="modal-dialog modal-box-shadown" role="document">
             <div className="modal-content">
             <ModalHeader>พิกัดบ้านลูกค้า</ModalHeader>
             <form >

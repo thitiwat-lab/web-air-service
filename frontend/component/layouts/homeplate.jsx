@@ -20,7 +20,7 @@ export default ({ children, title = 'Air Condition Center' }) => {
     <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="initial-scale=0.2, width=device-width"/>
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

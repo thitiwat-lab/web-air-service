@@ -96,7 +96,7 @@ export default () =>{
                                         return(
                                             <tr key={i + 'banner'}>
                                             <td className="text-center">{i + 1}</td>
-                                            <td className="text-center">{v.name}</td>
+                                            <td className="text-center"><img src={"http://localhost:3001/banner/images/"+ v.name} className="news-liss-home1" alt="" /></td>
                                             <td className="text-center">
                                             <button className="btn"  data-toggle="tooltip" data-placement="left" title="แก้ไข" onClick={modalid.bind(this, v._id)} >
                                                 <i className="far fa-edit" ></i>

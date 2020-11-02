@@ -6,9 +6,10 @@ import PortalTemplate from '../../../component/layouts/template'
 
 export default () => {
   const [income, setIncome] = useState([])
+  const [search1, setSearch1] = useState("")
   const [search, setSearch] = useState("")
+  const [search2, setSearch2] = useState("")
   const [filteredCountries, setFilteredCountries] = useState([]);
-
   const test = filteredCountries.reduce((p, v) => 
   p + parseInt(v.sum),0
 )
@@ -18,17 +19,18 @@ export default () => {
   try{
     setFilteredCountries(
       income.filter((v) =>
-       v.create_data.includes(search)
+       v.create_data.includes(search1)
        )
      )
   }catch(error){
     HandleAuth(error)
   }
-}, [search, income]);
+}, [search1, income]);
 useEffect(() => {
   try{
     setFilteredCountries(
       income.filter((v) =>
+      // console.log(v.create_data)
        v.create_data.includes(search.slice(0, 7)),
        )
      )
@@ -40,13 +42,13 @@ useEffect(() => {
   try{
     setFilteredCountries(
       income.filter((v) =>
-       v.create_data.includes(search.slice(0, 4)),
+       v.create_data.includes(search2.slice(0, 4)),
        )
      )
   }catch(error){
     HandleAuth(error)
   }
-}, [income, search]);
+}, [income, search2]);
 
  // get data income
  const getIncomes = async () =>{
@@ -80,7 +82,7 @@ useEffect(() => {
                   <input
                         type="date"
                         className="Selectd form-control"
-                        onChange={(e) => setSearch(e.target.value)}
+                        onChange={(e) => setSearch1(e.target.value)}
                       />
                 </div>
                 <div className="col-md-2">
@@ -96,7 +98,7 @@ useEffect(() => {
                   <input
                         type="date"
                         className="Selectd form-control"
-                        onChange={(e) => setSearch(e.target.value)}
+                        onChange={(e) => setSearch2(e.target.value)}
                       />
                 </div>
               </div>

@@ -28,7 +28,7 @@ const DeleteNewss = props => {
         className={classnames('modal fade animated', { 'show fadeInDown': props.delet })}
         style={{ display: props.delet ? 'block' : 'none' }}
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-box-shadown">
           <div className="modal-content">
             <ModalHeader>ลบสมาชิก</ModalHeader>
             <div className="modal-body">

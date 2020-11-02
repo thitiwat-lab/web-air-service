@@ -76,7 +76,7 @@ const Maps = props =>{
         className={classnames('modal fade animated', { 'show fadeInDown': props.updatemaps })}
         style={{ display: props.updatemaps ? 'block' : 'none' }}
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-box-shadown">
           <div className="modal-content">
             <Form onSubmit={onSubmit}>
             <ModalHeader>เปลี่ยนพิกัดบ้านลูกค้า</ModalHeader>

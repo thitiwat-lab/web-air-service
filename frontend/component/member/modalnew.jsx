@@ -51,7 +51,7 @@ React.useEffect(() => {}, [])
       className={classnames('modal fade animated', { 'show fadeInDown': props.modal1 })}
       style={{ display: props.modal1 ? 'block' : 'none', overflowY: 'auto' }}
     >
-      <div className="modal-dialog" role="document">
+      <div className="modal-dialog modal-box-shadown" role="document">
         <div className="modal-content">
           <Form onSubmit={onSubmit}>
             {props.errorMsg && <div className="alert alert-danger">เบอร์โทรศัพท์ของท่านซ้ำ กรุณาเปลี่ยนเบอร์ใหม่</div>}

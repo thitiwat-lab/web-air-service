@@ -99,7 +99,7 @@ export default () =>{
                           <thead>
                             <tr>
                               <th className="text-center">#</th>
-                              <th>รูปภาพ</th>
+                              <th className="text-center">รูปภาพ</th>
                               <th>รายละเอียด</th>
                               <th></th>
                           </tr>
@@ -109,7 +109,7 @@ export default () =>{
                             return(
                               <tr key={i + 'news'}>
                               <td className="text-center">{i+1}</td>
-                              <td>{v.name}</td>
+                              <td className="text-center"><img src={"http://localhost:3001/news/imgpath/"+ v.name} className="news-liss-home" alt=""/></td>
                               <td>{v.detail}</td>
                               <td className="text-center">
                               <button className="btn" onClick={selest.bind(this, v._id)}  data-toggle="tooltip" data-placement="left" title="แก้ไข" >

@@ -18,8 +18,8 @@ export const CreateHeaders = (headers = {}, options = {}) => {
   return opts
   
 }
-const url = 'http://159.89.195.62:3001/api/'
-// const url = 'http://localhost:3001/'
+// const url = 'http://159.89.195.62:3001/api/'
+const url = 'http://localhost:3001/'
 
 
 export const ENDPOINTS = {

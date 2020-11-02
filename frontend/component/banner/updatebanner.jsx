@@ -63,7 +63,7 @@ const Modalupdate = props => {
         className={classnames('modal fade animated', { 'show fadeInDown': props.updatebanner })}
         style={{ display: props.updatebanner ? 'block' : 'none', overflowY: 'auto' }}
         >
-             <div className="modal-dialog" role="document">
+             <div className="modal-dialog modal-box-shadown" role="document">
                 <div className="modal-content">
                   <Form onSubmit={handleSubmit(onSubmit)} >
                     <ModalHeader>แก้ไขแบนเนอร์ข่าวประชาสัมพันธ์</ModalHeader>

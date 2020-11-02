@@ -48,6 +48,7 @@ React.useEffect(()=>{
                     <Link href={"home/clean"}>
                           <img 
                           // src={"http://159.89.195.62:3001/api/news/imgpath/" + metadata} 
+                          src={"http://localhost:3001/news/imgpath/" + metadata}
                           className="card-img-top cardimg" alt="..."/>
                     </Link>
                   <div className="card-body " style={{height:'260px'}}>
@@ -61,6 +62,7 @@ React.useEffect(()=>{
                   <Link href={"home/repair"}>
                         <img 
                         // src={"http://159.89.195.62:3001/api/news/imgpath/" + metadata02}  
+                        src={"http://localhost:3001/news/imgpath/" + metadata02}
                         className="card-img-top cardimg" alt="..."
                         />
                   </Link>
@@ -75,6 +77,7 @@ React.useEffect(()=>{
                   <Link href={"home/installair"}>
                       <img 
                       // src={"http://159.89.195.62:3001/api/news/imgpath/" + metadata04}
+                      src={"http://localhost:3001/news/imgpath/" + metadata04 }
                        className="card-img-top cardimg" alt="..."/>
                   </Link>
                   <div className="card-body" style={{height:'260px'}}>

@@ -114,7 +114,7 @@ const ModelMap = props =>{
       >
           <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
           <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-        <div className="modal-dialog" role="document">
+        <div className="modal-dialog modal-box-shadown" role="document">
           <div className="modal-content">
             <ModalHeader>เพิ่มพิกัดบ้านลูกค้า</ModalHeader>
             <form onSubmit={onSubmit}>

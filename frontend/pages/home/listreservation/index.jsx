@@ -11,7 +11,7 @@ export default () => {
   const [countries, setCountries] = useState([]);
     useEffect( () => {
        axios({
-        url:'http://159.89.195.62:3001/api/reservations',
+        url:'http://localhost:3001/reservations',
         method:'get',
       ...CreateHeaders({}, {
         json: true,
