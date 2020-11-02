@@ -8,6 +8,7 @@ import { HandleAuth } from '../../service/config'
 
 
 
+
 export default () => {
   const [modal, setModal] = useState(false)
   const [Users, setUsers] = useState([])
@@ -49,7 +50,6 @@ export default () => {
   return (
     <PortalTemplate>
       <ModalfromNew modal={modal} GetUser={GetUser} messErr={messErr} errorMsg={errorMsg} CloseModal={CloseModal}/>
-          <div className="card cards">
             <div className="cars-body">
               <div className="row mt-5 ml-4">
                   <button className="btn btn-light" onClick={toggle}>
@@ -98,7 +98,6 @@ export default () => {
                       </table>
                 </div>
               </div>
-            </div>
     </PortalTemplate>
     )
 }

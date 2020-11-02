@@ -3,13 +3,27 @@ import React, {useState, useEffect} from 'react'
 import {GetIncome} from '../../../service/income'
 import { HandleAuth } from '../../../service/config'
 import PortalTemplate from '../../../component/layouts/template'
-
+import Detailreport from '../../../component/listdetail/detailreport'
 export default () => {
   const [income, setIncome] = useState([])
   const [search1, setSearch1] = useState("")
   const [search, setSearch] = useState("")
   const [search2, setSearch2] = useState("")
   const [filteredCountries, setFilteredCountries] = useState([]);
+  const [detailuser, setDetailuser] = useState(false)
+  const [detailId, setDetailId] = useState('')
+   // detail
+   const detail =()=>{
+    setDetailuser(!detailuser)
+  }
+  const CloseDetail =()=>{
+    setDetailuser(false)
+  }
+  const dtId =(id)=>{
+    setDetailId(id)
+    detail()
+  }
+
   const test = filteredCountries.reduce((p, v) => 
   p + parseInt(v.sum),0
 )
@@ -70,6 +84,7 @@ useEffect(() => {
   },[])
     return(
         <PortalTemplate>
+            <Detailreport detailuser={detailuser} detailId={detailId} CloseDetail={CloseDetail} />
         <div>
          <div className="card cards">
                 <div className="card-header span-a ">
@@ -111,10 +126,6 @@ useEffect(() => {
                               <th>ชื่อ</th>
                               <th>นามสกุล</th>
                               <th>เบอร์โทรศัพท์</th>
-                              <th>9000-15000BTU</th>
-                              <th>18000-24000BTU</th>
-                              <th>ราคาซ่อม</th>
-                              <th>ส่วนลด</th>
                               <th>ยอดชำระ</th>
                           </tr>
                         </thead>
@@ -122,14 +133,10 @@ useEffect(() => {
                           {filteredCountries.map((v, i)=>{
                             return(
                             <tr key={i + 'income'}>
-                              <td className="text-center">{i+1}</td>
-                            <td>{v.firstname}</td>
+                            <td className="text-center">{i+1}</td>
+                            <td><p onClick={dtId.bind(this, v._id)} className="text-detail-all text-detail-all1">{v.firstname}</p></td>
                             <td>{v.lastname}</td>
                             <td>{v.tel}</td>
-                            <td>{v.NinethousandBTU}</td>
-                            <td>{v.TwelvethousandBTU}</td>
-                            <td>{v.pricerepair}</td>
-                            <td>{v.promotion}</td>
                             <td>{v.sum}</td>
                             </tr>
                             )

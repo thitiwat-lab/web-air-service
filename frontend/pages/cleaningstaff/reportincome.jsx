@@ -9,6 +9,7 @@ import {GetPromotion} from '../../service/promotion'
 import UpdateModal from '../../component/income/updateincome'
 import UpdateStatus from '../../component/income/updatestatus'
 import Detail from '../../component/income/getincome'
+import DetailIcome from '../../component/listdetail/detailicom'
 
 export default () => {
   const [modal, setModal] = useState(false)
@@ -20,7 +21,19 @@ export default () => {
   const [updateId, setUpdateId] = useState('')
   const [modaldetail, setModaldetail] =useState(false)
   const [detailId, setDetailId] =useState('')
-
+  const [detailuser, setDetailuser] = useState(false)
+  const [detailid, setDetailid] = useState('')
+   // detail
+   const detail =()=>{
+    setDetailuser(!detailuser)
+  }
+  const CloseDetails =()=>{
+    setDetailuser(false)
+  }
+  const dtId =(id)=>{
+    setDetailid(id)
+    detail()
+  }
   // text color
   const textstatus = {
     อยู่ระหว่างดำเนินการ:<p className="text-warning">อยู่ระหว่างดำเนินการ</p>,
@@ -102,6 +115,7 @@ export default () => {
           {/* <ModalFromincome toggle={toggle} promotions={promotions} getIncomes={getIncomes} CloseModal={CloseModal} messErr={messErr} errorMsg={errorMsg} modal={modal} /> */}
           <UpdateModal Closeupdate={Closeupdate} modalupdate={modalupdate} promotions={promotions} getIncomes={getIncomes} updateId={updateId}  messErr={messErr} errorMsg={errorMsg} />
          <Detail modaldetail={modaldetail} detailId={detailId} CloseDetail={CloseDetail} messErr={messErr} errorMsg={errorMsg}/>
+         <DetailIcome detailuser={detailuser} detailid={detailid} CloseDetails={CloseDetails} />
          <div>
          <div className="card cards">
               <div className="card-header span-a ">
@@ -134,12 +148,12 @@ export default () => {
                               <th>ชื่อ</th>
                               <th>นามสกุล</th>
                               <th>เบอร์โทรศัพท์</th>
-                              <th>9000-15000BTU</th>
+                              {/* <th>9000-15000BTU</th>
                               <th>18000-24000BTU</th>
                               <th>รายละเอียกการซ่อม</th>
                               <th>ราคาซ่อม</th>
                               <th>ส่วนลด</th>
-                              <th>ยอดชำระ</th>
+                              <th>ยอดชำระ</th> */}
                               <th>สถานะการเงิน</th>
                               <th></th>
                           </tr>
@@ -148,16 +162,16 @@ export default () => {
                           {income.map((v, i)=>{
                             return(
                             <tr key={i + 'income'}>
-                              <td className="text-center">{i+1}</td>
-                            <td>{v.firstname}</td>
+                            <td className="text-center">{i+1}</td>
+                            <td><p onClick={dtId.bind(this, v._id)} className="text-detail-all text-detail-all1">{v.firstname}</p></td>
                             <td>{v.lastname}</td>
                             <td>{v.tel}</td>
-                            <td>{v.NinethousandBTU}</td>
+                            {/* <td>{v.NinethousandBTU}</td>
                             <td>{v.TwelvethousandBTU}</td>
                             <td>{v.repair}</td>
                             <td>{v.pricerepair}</td>
                             <td>{v.promotion}</td>
-                            <td>{v.sum}</td>
+                            <td>{v.sum}</td> */}
                             <td>{textstatus[v.status]}</td>
                             <td className="text-center">
                               <button 

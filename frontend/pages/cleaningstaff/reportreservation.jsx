@@ -12,7 +12,7 @@ import Showmaps from '../../component/cleaningstaff/showmaps'
 import {GetMember} from '../../service/member'
 // import ModelMap from '../../component/reservation/createmaps'
 import {GetMaps} from '../../service/maps'
-
+import Detailuser from '../../component/listdetail/detailuser'
 export default () => {
   // const [modal, setModal] = useState(false)
   const [errorMsg, setErrorMsg] = React.useState(false)
@@ -30,7 +30,19 @@ export default () => {
   const [mapsdata, setMapsdata] = useState([])
   const [search, setSearch] = useState("");
   const [filteredCountries, setFilteredCountries] = useState([]);
-
+  const [detailuser, setDetailuser] = useState(false)
+  const [detailId, setDetailId] = useState('')
+   // detail
+   const detail =()=>{
+    setDetailuser(!detailuser)
+  }
+  const CloseDetail =()=>{
+    setDetailuser(false)
+  }
+  const dtId =(id)=>{
+    setDetailId(id)
+    detail()
+  }
   // text color
   const textstatus = {
     อยู่ระหว่างดำเนินการ:<p className="text-warning">อยู่ระหว่างดำเนินการ</p>,
@@ -156,6 +168,7 @@ useEffect(() => {
         <PortalTemplate>
              <UpdateModal Closeupdate={Closeupdate} modalupdate={modalupdate} updateId={updateId} getResrvation={GetResrvations} messErr={messErr} errorMsg={errorMsg} />
               <Showmaps Closeshowmap={Closeshowmap} mapid={mapid} shomaps={shomaps} errorMsg={errorMsg} messErr={messErr} />
+              <Detailuser detailuser={detailuser} detailId={detailId} CloseDetail={CloseDetail} />
         <div>
           <div className="card cards">
                 <div className="card-header span-a">
@@ -181,10 +194,10 @@ useEffect(() => {
                               <th className="text-center">#</th>
                               <th>ชื่อ</th>
                               <th>นามสกุล</th>
-                              <th>ที่อยู่</th>
+                              {/* <th>ที่อยู่</th> */}
                               <th>เบอร์โทรศัพท์</th>
-                              <th>จำนวนเครื่อง</th>
-                              <th>วันที่จองคิว-เลื่อนคิว</th>
+                              {/* <th>จำนวนเครื่อง</th>
+                              <th>วันที่จองคิว-เลื่อนคิว</th> */}
                               <th>สถานะ</th>
                               <th></th>
                           </tr>
@@ -194,12 +207,12 @@ useEffect(() => {
                             return(
                               <tr key={i + 'reservationdata'} >
                               <td className="text-center">{i + 1}</td>
-                              <td>{v.firstname}</td>
+                              <td><p onClick={dtId.bind(this, v._id)} className="text-detail-all text-detail-all1">{v.firstname}</p></td>
                               <td>{v.lastname}</td>
-                              <td>{v.address}</td>
+                              {/* <td>{v.address}</td> */}
                               <td>{v.tel}</td>
-                              <td >{v.amount}</td>
-                              <td>{v.reservations_date.slice(8,-14)}-{v.reservations_date.slice(5,-17)}-{v.reservations_date.slice(0,-20)}{v.reservations_date.slice(10, -8)}</td>
+                              {/* <td >{v.amount}</td>
+                              <td>{v.reservations_date.slice(8,-14)}-{v.reservations_date.slice(5,-17)}-{v.reservations_date.slice(0,-20)}{v.reservations_date.slice(10, -8)}</td> */}
                               <td>{textstatus[v.status]}</td>
                               <td className="text-center">
                               <button className="btn" 

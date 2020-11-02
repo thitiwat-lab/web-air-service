@@ -7,6 +7,7 @@ import {HandleAuth} from '../../../service/config'
 import Updatemaps from '../../../component/maps/updatemaps'
 import DeletedMaps from '../../../component/maps/deletemaps'
 import Showmaps from '../../../component/tablemaps/showmaps'
+import DetailMapss from '../../../component/listdetail/detailmap'
 
 export default () =>{
   const [mapsdata, setMapsdata] = useState([])
@@ -17,6 +18,19 @@ export default () =>{
   const [delId, setDelId] = useState('')
   const [mapid, setMapId] =useState('')
   const [shomaps, setShomaps] = useState(false)
+  const [detailuser, setDetailuser] = useState(false)
+  const [detailId, setDetailId] = useState('')
+   // detail
+   const detail =()=>{
+    setDetailuser(!detailuser)
+  }
+  const CloseDetail =()=>{
+    setDetailuser(false)
+  }
+  const dtId =(id)=>{
+    setDetailId(id)
+    detail()
+  }
 // show maps
   const showmap = () =>{
     setShomaps(!shomaps)
@@ -72,6 +86,7 @@ export default () =>{
             <Updatemaps updatemodel={updatemodel} getmaps={getmaps} errorMsg={errorMsg} messErr={messErr} Closemaps={Closemaps} mapsID={mapsID} />
             <DeletedMaps delId={delId} delet={delet} CloseDelete={CloseDelete} getmaps={getmaps} errorMsg={errorMsg} messErr={messErr} />
             <Showmaps Closeshowmap={Closeshowmap} mapid={mapid} shomaps={shomaps} errorMsg={errorMsg} messErr={messErr} />
+            <DetailMapss detailuser={detailuser} detailId={detailId} CloseDetail={CloseDetail} />
             <div>
           <div className="card cards">
             <div className="card-header span-a ">
@@ -97,10 +112,10 @@ export default () =>{
                               <th className="text-center">#</th>
                               <th>ชื่อ</th>
                               <th>นามสกุล</th>
-                              <th>ที่อยู่</th>
+                              {/* <th>ที่อยู่</th> */}
                               <th>เบอร์โทรศัพท์</th>
-                              <th>ละติจูด</th>
-                              <th>ลองจิจูด</th>
+                              {/* <th>ละติจูด</th>
+                              <th>ลองจิจูด</th> */}
                               <th></th>
                           </tr>
                         </thead>
@@ -109,12 +124,12 @@ export default () =>{
                             return(
                               <tr key={i + 'mapsmember'}>
                                 <td className="text-center">{i + 1}</td>
-                                <td>{v.firstname}</td>
+                                <td><p onClick={dtId.bind(this, v._id)} className="text-detail-all text-detail-all1">{v.firstname}</p></td>
                                 <td>{v.lastname}</td>
-                                <td>{v.address}</td>
+                                {/* <td>{v.address}</td> */}
                                 <td>{v.tel}</td>
-                                <td>{v.lat}</td>
-                                <td>{v.lng}</td>
+                                {/* <td>{v.lat}</td>
+                                <td>{v.lng}</td> */}
                                 <td className="text-center">
                                 <button className="btn" onClick={Mapsid.bind(this, v._id)}  data-toggle="tooltip" data-placement="left" title="แก้ไข" >
                                   <i className="far fa-edit" ></i>

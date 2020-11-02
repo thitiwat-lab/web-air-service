@@ -8,7 +8,7 @@ import DeleteUsers from '../component/users/DeleteUser'
 import { Getuser } from '../service/users'
 import { HandleAuth } from '../service/config'
 import Updatepass from '../component/users/updatepassword'
-
+import Detailstaff from '../component/listdetail/detailstaff'
 export default () => {
   const [modal, setModal] = useState(false)
   const [Users, setUsers] = useState([])
@@ -20,6 +20,19 @@ export default () => {
   const [inputvalue, setInputvalue] = useState({})
   const [modalpass, setModalpass] = useState(false)
   const [passid, setPassid] = useState("")
+  const [detailuser, setDetailuser] = useState(false)
+  const [detailId, setDetailId] = useState('')
+   // detail
+   const detail =()=>{
+    setDetailuser(!detailuser)
+  }
+  const CloseDetail =()=>{
+    setDetailuser(false)
+  }
+  const dtId =(id)=>{
+    setDetailId(id)
+    detail()
+  }
 
   // update password
   const updatepass = () =>{
@@ -101,6 +114,8 @@ export default () => {
       <UpdateModal modalupdate={modalupdate} Closeupdate={Closeupdate} userId={userId} GetUser={GetData} errorMsg={errorMsg} messErr={messErr}/>
       <DeleteUsers  CloseDelete={CloseDelete} delId={delId} delet={delet} GetUser={GetData}  errorMsg={errorMsg}/>
         <Updatepass GetUser={GetData} messErr={messErr} errorMsg={errorMsg} modalpass={modalpass} passid={passid} Closeupdatepass={Closeupdatepass} />
+        <Detailstaff detailuser={detailuser} detailId={detailId} CloseDetail={CloseDetail} />
+         
           <div className="card cards">
             <div className="card-header span-a ">
                         <p className="text-title" >ข้อมูลพนักงาน</p>
@@ -130,9 +145,9 @@ export default () => {
                               <th className="text-center">#</th>
                               <th>ชื่อ</th>
                               <th>นามสกุล</th>
-                              <th>อีเมล</th>
-                              <th>ที่อยู่</th>
-                              <th>เบอร์โทรศัพท์</th>
+                              {/* <th>อีเมล</th>
+                              <th>ที่อยู่</th> 
+                              <th>เบอร์โทรศัพท์</th>*/}
                               <th>สิทธิการใช้งาน</th>
                               <th>สถานะ</th>
                             <th></th>
@@ -143,11 +158,11 @@ export default () => {
                             return(
                             <tr key={i + 'userdata'}>
                             <td className="text-center">{i + 1}</td>
-                            <td>{v.firstname}</td>
+                            <td><p onClick={dtId.bind(this, v._id)} className="text-detail-all text-detail-all1">{v.firstname}</p></td>
                             <td>{v.lastname}</td>
-                            <td>{v.email}</td>
+                            {/* <td>{v.email}</td>
                             <td>{v.address}</td>
-                            <td>{v.tel}</td>
+                            <td>{v.tel}</td> */}
                             <td>{v.userrights}</td>
                             <td>{textstatus[v.status]}</td>
                             <td className="text-center">
