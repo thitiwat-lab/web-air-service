@@ -7,22 +7,23 @@ import Link from 'next/link'
 import {GetNews} from '../service/news'
 
 export default () => {
-  const [metadata, setMetadata] = useState('')
-  const [metadata01, setMetadata01] = useState('')
-  const [metadata02, setMetadata02] = useState('')
-  const [metadata03, setMetadata03] = useState('')
-  const [metadata04, setMetadata04] = useState('')
-  const [metadata05, setMetadata05] = useState('')
+  const [metadata, setMetadata] = useState([])
+
+  // const [metadata01, setMetadata01] = useState('')
+  // const [metadata02, setMetadata02] = useState('')
+  // const [metadata03, setMetadata03] = useState('')
+  // const [metadata04, setMetadata04] = useState('')
+  // const [metadata05, setMetadata05] = useState('')
   
   const getnews =async () =>{
     const { data } =await GetNews()
     if(data.code === 'OK'){
-      setMetadata(data.results[0].name)
-      setMetadata01(data.results[0].detail)
-      setMetadata02(data.results[1].name)
-      setMetadata03(data.results[1].detail)
-      setMetadata04(data.results[2].name)
-      setMetadata05(data.results[2].detail)
+      setMetadata(data.results)
+      // setMetadata01(data.results[0].detail)
+      // setMetadata02(data.results[1].name)
+      // setMetadata03(data.results[1].detail)
+      // setMetadata04(data.results[2].name)
+      // setMetadata05(data.results[2].detail)
       }
     }
 React.useEffect(()=>{
@@ -31,19 +32,65 @@ React.useEffect(()=>{
 
   return (
     <Frontend>
-      <div style={{backgroundColor:'#ffffff'}} >
-        <div className="container fluid ">
-          <div className="card text-center">
-              <img src="02.jpg" className="card-img card-img-h" alt="..." />
+      <div style={{backgroundColor:'#F0F8FF'}} >
+        <div className="container fluid " >
+          <div className="card text-center ">
+              <img src="bgair01.png" className="card-img card-img-h" alt="..." />
             <div className="card-img-overlay">
-                <p className="text card-title">บริษัทวีซีแอร์เซอร์วิส</p>
-                <p className="text-1 card-title">ศูนย์บริการ ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ </p>
+              <div className="row"> 
+              <p className="text">บริษัท</p><p className="text-01">วีซีแอร์เซอร์วิส</p>
               </div>
+                <p className="text-1">ศูนย์บริการ ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ </p>
+                <div className="row"></div>
+                <p className="text-02"><b>เปิดให้บริการทุกวัน | ติดต่อได้ที่ 093-795-5535</b></p>
+              </div>
+              <div className="container-fluid text-center" style={{height:'60px', backgroundColor:'#ffffff'}}>
+                <marquee style={{fontSize:'24px', color:'#000000'}} className="mt-2" direction="left" width="50%" scrollamount="6">“ ศูนย์บริการ ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ติดต่อได้ที่ 093-795-5535 ”</marquee>
+            </div>
             </div>
            </div>
-            <div className="container mt-5">
+            <div className="container" style={{backgroundColor:'#D3D3D3'}}>
               <div className="row">
-                <div className="col-md-4">
+                  <div className="col-md-3">
+                    <div className="card mt-4 shadown-home" >
+                      <div className="card-header">
+                        <h5>บริการ</h5>
+                      </div>
+                      <div className="card-body" style={{padding:'10px'}}>
+                      <Link href={"home/clean"}><p className="text-mouse"><i class="fas fa-angle-double-right "></i> บริการล้างเครื่องปรับอากาศ</p></Link>
+                      <Link href={"home/repair"}><p className="text-mouse"><i class="fas fa-angle-double-right"></i> บริการซ่อมเครื่องปรับอากาศ</p></Link>
+                      <Link href={"home/installair"}><p className="text-mouse"><i class="fas fa-angle-double-right"></i> บริการติดตั้งเครื่องปรับอากาศ</p></Link>
+                      </div>
+                    </div>
+                    <div className="card mt-3 shadown-home">
+                      <div className="card-header">
+                        <h5>เกี่ยวกับเรา</h5>
+                      </div>
+                      <div className="card-body" style={{padding:'10px'}}>
+                      <Link href={"/home/structure"}><p className="text-mouse"><i class="fas fa-angle-double-right"></i> เกี่ยวกับเรา</p></Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-9">
+                    <div className="card mt-4 mb-3 shadown-home">
+                      <div className="card-header">
+                        <h5>ภาพการให้บริการ</h5>
+                      </div>
+                        <div className="card-body" style={{overflowY: 'auto'}}>
+                           <div className="row">
+                        {metadata.map((v, i)=>{
+                          return(
+                            <div className="card-body"key={i + 'imges'}>
+                              <img src={"http://localhost:3001/news/imgpath/" + v.name} className="border" style={{width:'200px',height:'200px'}} alt=""/>
+                            </div>
+                          )
+                        })} 
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className="col-md-4">
                 <div className="card">
                     <Link href={"home/clean"}>
                           <img 
@@ -85,11 +132,10 @@ React.useEffect(()=>{
                     <p className="cardfont" >{metadata05}</p>
                   </div>
                   </div>
-                </div>
+                </div> */}
               </div>
-              <div className="row mt-3">
+              {/* <div className="row mt-3">
                 <div className="col-8">
-                  <img className="cardimg01 " src="03.png" alt=""/>
                 </div>
                 <div className="col-md-4 text-center">
                   <b><p className="mb-0">“ ศูนย์บริการ ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ”</p></b>
@@ -97,7 +143,7 @@ React.useEffect(()=>{
                   <p className="mb-0">เลือกบริการที่หลากหลาย บริการระดับมืออาชีพ ยินดีให้บริการทุกงานแอร์ เข้าใจสิ่งแวดล้อมบริการด้วยใจ</p>
                   <p className="mb-3">โทรเลย: 093-795-5535</p>
                 </div>
-              </div>
+              </div> */}
           </div>
           </div>
           <div className="container-fluid text-center" style={{height:'60px', backgroundColor:'#99CCFF'}}>

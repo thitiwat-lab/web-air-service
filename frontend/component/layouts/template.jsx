@@ -135,7 +135,7 @@ export default ({ children, title = 'Air Condition Center' }) => {
                         <LinkActive title="ประมวลผลค่าใช้จ่าย" to="/portal/Incomes" icon="fas fa-calculator" />
                         <LinkActive title="โปรโมชั่น" to="/portal/promotion" icon="fas fa-address-card" />
                         <LinkActive title="รายงาน" to="/portal/report" icon="fas fa-list" />
-                        <LinkActive title="รายละเอียดการให้บริการ" to="/portal/news" icon="fas fa-newspaper" />
+                        <LinkActive title="ประมวลภาพการให้บริการ" to="/portal/news" icon="fas fa-newspaper" />
                         <LinkActive title="แบนเนอร์โปรโมชั่น" to="/portal/banner" icon="fas fa-images" />
                         <LinkActive title="พื้นที่ให้บริการ" to ="/portal/maps" icon="fas fa-map-marked-alt" />
                     </ul> 

@@ -36,7 +36,7 @@ React.useEffect(() => {
       className={classnames('modal fade animated', { 'show fadeInDown': props.detailuser })}
       style={{ display: props.detailuser ? 'block' : 'none', overflowY: 'auto' }}
     >
-          <div className="modal-dialog">
+          <div className="modal-dialog modal-box-shadown">
           <div className="modal-content">
           <div className="modal-header">
         <h5 className="modal-title">แสดงรายละเอียด</h5>

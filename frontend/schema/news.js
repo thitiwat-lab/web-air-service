@@ -6,9 +6,9 @@ export const NewsSchema = yup
     // newstitle: yup
     // .string()
     // .label('Newstitle'),
-    detail: yup
-    .string()
-    .label('Detail'),
+    // detail: yup
+    // .string()
+    // .label('Detail'),
     name: yup
     .string()
     // .required()
@@ -23,10 +23,10 @@ export const UdateNewsSchema = yup
     // .string()
     // .required()
     // .label('Newstitle'),
-    detail: yup
-    .string()
-    .required()
-    .label('detail'),
+    // detail: yup
+    // .string()
+    // .required()
+    // .label('detail'),
     name: yup
     .string()
     .required()

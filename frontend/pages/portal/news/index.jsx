@@ -77,11 +77,11 @@ export default () =>{
                         <p className="text-title" >รายละเอียดการให้บริการ</p>
                     </div>
                     <div className="card-body">
-                        {/* <div className="row mt-3 ml-4">
+                        <div className="row mt-3 ml-4">
                             <button className="btn btn-light" onClick={toggle} >
                                 <i className="fas fa-plus-circle"></i> เพิ่ม
                             </button>
-                        </div> */}
+                        </div>
                         {/* <div className="row ml-3 mt-3">
                             <div className="col-md-2">
                                 <label className="mb-0 ">ค้นหา</label>
@@ -100,7 +100,6 @@ export default () =>{
                             <tr>
                               <th className="text-center">#</th>
                               <th className="text-center">รูปภาพ</th>
-                              <th>รายละเอียด</th>
                               <th></th>
                           </tr>
                         </thead>
@@ -110,7 +109,6 @@ export default () =>{
                               <tr key={i + 'news'}>
                               <td className="text-center">{i+1}</td>
                               <td className="text-center"><img src={"http://localhost:3001/news/imgpath/"+ v.name} className="news-liss-home" alt=""/></td>
-                              <td>{v.detail}</td>
                               <td className="text-center">
                               <button className="btn" onClick={selest.bind(this, v._id)}  data-toggle="tooltip" data-placement="left" title="แก้ไข" >
                                 <i className="far fa-edit" ></i>

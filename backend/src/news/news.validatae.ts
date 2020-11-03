@@ -9,7 +9,7 @@ export const NewsCreateValidate = Joi.object()
     .required()
 export const NewsUpdateValidate = Joi.object()
     .keys({
-        detail:Joi.string().required(),
+        // detail:Joi.string().required(),
         name:Joi.string().required(),
     })
     .required()

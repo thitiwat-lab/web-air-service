@@ -86,7 +86,7 @@ React.useEffect(()=>{
         className={classnames('modal fade animated', { 'show fadeInDown': props.modal })}
         style={{ display: props.modal ? 'block' : 'none', overflowY: 'auto' }}
         >
-             <div className="modal-dialog" role="document">
+             <div className="modal-dialog modal-box-shadown" role="document">
                 <div className="modal-content">
                   <Form onSubmit={onSubmit}>
                     <ModalHeader>เพิ่มข่าวประชาสัมพันธ์</ModalHeader>
@@ -107,7 +107,7 @@ React.useEffect(()=>{
                                 </div>
                             {/* <div className="invalid-feedback">{errors.lastname && errors.lastname.message}</div> */}
                             </div>
-                            <div className="col-md-12">
+                            {/* <div className="col-md-12">
                               <label htmlFor="Detail" className="mr-sm-2 mt-2">
                                 รายละเอียด
                               </label>
@@ -122,7 +122,7 @@ React.useEffect(()=>{
                                 ref={register}
                               />
                               <div className="invalid-feedback">{errors.Detail && errors.Detail.message}</div>
-                            </div>
+                            </div> */}
                         </div>
                       </div>
                     <ModalFooter>

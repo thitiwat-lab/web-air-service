@@ -119,7 +119,7 @@ const ModalUpdate = props =>{
                                     <img src={imgData} alt="" className="border mt-1" style={{width:'450px', height:'270px'}} ref={register}/>
                                 </div>
                             </div>
-                            <div className="col-md-12">
+                            {/* <div className="col-md-12">
                               <label htmlFor="Detail" className="mr-sm-2 mt-2">
                                 รายละเอียด
                               </label>
@@ -134,7 +134,7 @@ const ModalUpdate = props =>{
                                 ref={register}
                               />
                               <div className="invalid-feedback">{errors.Detail && errors.Detail.message}</div>
-                            </div>
+                            </div> */}
                         </div>
                       </div>
                     <ModalFooter>

@@ -10,8 +10,7 @@ export default () => {
   const [search, setSearch] = useState("");
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [countries, setCountries] = useState({});
-  const test = []
-  const entries = test.push(countries)
+
   const getstatus = async () =>{
     try{
       const {data} = await Getdate({status:'อยู่ระหว่างดำเนินการ'})
@@ -40,7 +39,7 @@ export default () => {
     useEffect(() => {
       try{
         setFilteredCountries(
-          test.filter((v) =>
+          countries.filter((v) =>
            v.reservations_date.includes(search)
            )
          )

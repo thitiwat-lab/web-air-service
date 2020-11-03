@@ -23,7 +23,7 @@ export class ReservationsService {
     return await this.reservationsmodel.findOne({ _id: id });
   }
   async searchOne (date):Promise<any>{
-    return await this.reservationsmodel.findOne(date).exec()
+    return await this.reservationsmodel.find(date).exec()
   }
   async createreservation(body: CreateReservationsDTO): Promise<any> {
     const now = moment().utc().format()

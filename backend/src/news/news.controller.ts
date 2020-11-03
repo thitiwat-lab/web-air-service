@@ -61,8 +61,8 @@ export class NewsController {
     async createNews(@UploadedFile() file, @Body() body:NewsCreateDto):Promise<any>{
         try{
             await this.NewsService.createnews({
-                name:file.filename,
-                detail:body.detail,
+                name:file.filename
+                // detail:body.detail,
         })
                 return{
                 code:KEY.KEY_OK,
@@ -94,8 +94,8 @@ export class NewsController {
         try{
              await this.NewsService.updatenews(id, {
                 name:file.filename,
-                newstitle:body.newstitle,
-                detail:body.detail,
+                // newstitle:body.newstitle,
+                // detail:body.detail,
              })
              return{
                  code:KEY.KEY_OK,
