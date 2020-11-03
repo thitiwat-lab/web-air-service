@@ -60,10 +60,18 @@ const Detail = props => {
               <ModalHeader>
                   <div className="row">
                         <p>ใบเสร็จรับเงิน</p>
-                          <p style={{marginLeft:'180px'}}>เลขที่..............</p>
+                          <p style={{marginLeft:'180px'}}>บริษัทวีซีแอร์เซอร์วิส</p>
                   </div>
                   </ModalHeader>
             <div className="modal-body">
+                <div className="row">
+                <div className="col-md-8">
+                <p>วันที่........./........../........</p>
+                </div>
+                <div className="col-md-4">
+                <p>เลขที่......................</p>
+                </div>
+                </div>
                 <div className="row">
                     <div className="col-md-4 ml-1">
                         <p>ชื่อ : {getdetail.firstname} </p>
@@ -80,9 +88,9 @@ const Detail = props => {
                                 <p>9000-15,000 BTU จำนวน {getdetail.NinethousandBTU} เครื่อง</p>
                                 <p>18,000-24,000 BTU จำนวน {getdetail.TwelvethousandBTU} เครื่อง</p>
                                 <p>รายละเอียด : {getdetail.repair} </p>
-                                <p>ราคาซ่อม : {getdetail.pricerepair} </p>
-                                <p>ส่วนลด : {getdetail.promotion} </p>
-                                <p>ยอดชำระ : {getdetail.sum} </p>
+                                <p>ราคาซ่อม : {getdetail.pricerepair} บาท</p>
+                                <p>ส่วนลด : {getdetail.promotion} บาท</p>
+                                <p>ยอดชำระ : {getdetail.sum} บาท</p>
                             </div>
                         </div>
                     </div>

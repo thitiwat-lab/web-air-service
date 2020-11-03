@@ -5,29 +5,42 @@ import Link from 'next/link'
 import {CreateHeaders} from '../../../service/config'
 import Homeplate from '../../../component/layouts/homeplate'
 import{HandleAuth}from '../../../service/config'
+import{Getdate} from '../../../service/reservation'
 export default () => {
   const [search, setSearch] = useState("");
   const [filteredCountries, setFilteredCountries] = useState([]);
-  const [countries, setCountries] = useState([]);
-    useEffect( () => {
-       axios({
-        url:'http://localhost:3001/reservations',
-        method:'get',
-      ...CreateHeaders({}, {
-        json: true,
-        auth: true 
-      })
-      }).then((res) => {
-        setCountries(res.data.results);
-      })
-      .catch((err) => {
-      })
-    }, []);
+  const [countries, setCountries] = useState({});
+  const test = []
+  const entries = test.push(countries)
+  const getstatus = async () =>{
+    try{
+      const {data} = await Getdate({status:'อยู่ระหว่างดำเนินการ'})
+      if(data.code === 'OK'){
+        setCountries(data.result)
+      }
+    }catch(error){
+      HandleAuth(error)
+    }
+  }
+    // useEffect( () => {
+    //    axios({
+    //     url:'http://localhost:3001/reservations',
+    //     method:'get',
+    //   ...CreateHeaders({}, {
+    //     json: true,
+    //     auth: true 
+    //   })
+    //   }).then((res) => {
+    //     setCountries(res.data.results);
+    //   })
+    //   .catch((err) => {
+    //   })
+    // }, []);
     
     useEffect(() => {
       try{
         setFilteredCountries(
-          countries.filter((v) =>
+          test.filter((v) =>
            v.reservations_date.includes(search)
            )
          )
@@ -42,6 +55,7 @@ export default () => {
     ยกเลิกการจองคิว:<p className="text-danger">ยกเลิกการจองคิว</p>
   }
   React.useEffect(() =>{
+    getstatus()
   },[])
     return(
         <Homeplate>

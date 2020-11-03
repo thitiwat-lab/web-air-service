@@ -6,9 +6,6 @@ import ModalfromNew from '../../component/users/ModalfromNew'
 import {Getuser} from '../../service/users'
 import { HandleAuth } from '../../service/config'
 
-
-
-
 export default () => {
   const [modal, setModal] = useState(false)
   const [Users, setUsers] = useState([])

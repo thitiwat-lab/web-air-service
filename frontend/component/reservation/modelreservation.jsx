@@ -21,9 +21,7 @@ const ModalFrom = props => {
      })
      const [inputvalue, setInputvalue] = useState({})
      const [searchdata, setSearchdata] =useState({})
-     const [startDate, setStartDate] = useState(
-      setHours(setMinutes(new Date(), 30), 16)
-    );
+     const [startDate, setStartDate] = useState(null);
 
      const handle =  (event) => {
       setInputvalue({...inputvalue, [event.target.name]:event.target.value})
