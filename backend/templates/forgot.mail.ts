@@ -5,6 +5,7 @@ import { TemplateType } from '../config/config'
 
 // valiable
 const TEMPLATE_RESET: TemplateType = env.get('MAILER.TEMPLATE.RESET')
+// const TEMPLATE_RESET = env.get('MAILER.TEMPLATE.RESET')
 const TITLE = TEMPLATE_RESET.TITLE
 const TEXT_TITLE = TEMPLATE_RESET.TEXT_TITLE
 const TEXT_BTN = TEMPLATE_RESET.TEXT_BTN
