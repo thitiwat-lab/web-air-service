@@ -108,6 +108,7 @@ export default () =>{
                             return(
                               <tr key={i + 'news'}>
                               <td className="text-center">{i+1}</td>
+                              {/* <td className="text-center"><img src={"http://128.199.127.236:3001/api/news/imgpath/"+ v.name} className="news-liss-home" alt=""/></td> */}
                               <td className="text-center"><img src={"http://localhost:3001/news/imgpath/"+ v.name} className="news-liss-home" alt=""/></td>
                               <td className="text-center">
                               <button className="btn" onClick={selest.bind(this, v._id)}  data-toggle="tooltip" data-placement="left" title="แก้ไข" >

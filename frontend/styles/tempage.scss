@@ -1661,3 +1661,119 @@ margin-left: 10px;
     margin-top: 10px;
   }
 }
+.head-img {
+  // margin-top: 5px;
+  margin-left: 2%;
+  width: 96%;
+  height: 900px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19)
+}
+.hr-page{
+  margin-left: 2%;
+  width: 96%;
+}
+.h-h3{
+    margin-top: 10px;
+    margin-left: 2%;
+}
+.flex-box {
+  margin-left: 7%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.body-img{
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 400px;
+    height: 350px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+    cursor:pointer;
+}
+.topic-body{
+    margin-top: 70px; 
+}
+p.p1{
+  font-weight:normal;
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+}p.p2{
+  font-weight:normal;
+  font-size: 45px;
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  left: 53.5%;
+  top: 18.5%;
+  z-index: 1;
+}
+
+p.h{
+  color: #e9ecef;
+  background-color: #000000;
+  filter: alpha(opacity=60);
+  opacity: 0.8;
+  font-size: 45px;
+  padding: 15px 18px 10px 18px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight:bold;
+}
+h2.h{
+  padding: 6px 6px 8px 6px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  margin-top: 2px;
+}
+.text-head{
+  position: absolute;
+  left: 48%;
+  top: 18%;
+  z-index: 1;
+}
+.colsr-bt{
+  float: right;
+  position: relative;
+  right: 5%;
+  top: 5%;
+}
+.image-popup{
+  position: relative;
+  right: 10%;
+  top: 8%;
+  filter: alpha(opacity=60);
+  opacity: 1;
+}
+.img-in-popup{
+  width: 786px;
+  height: 786px;
+}
+.backpopup{
+  background-color: #00000077;
+}
+@media (max-width: 780px) {
+  .img-in-popup{
+    width: 786px;
+    height: 786px;
+  }
+  .head-img {
+      margin-top: auto;
+      width: auto;
+      height: auto;
+    }
+    .body-img{
+      margin-left: 5px;
+      padding: 10px 10px 0px 0px;
+      width: 200px;
+      height: 200px;
+  }
+  p.p1{
+      font-size: 50px;
+      font-family: Arial, Helvetica, sans-serif, Monospace;
+  }
+  .flex-box {
+      margin-left: 0px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+}

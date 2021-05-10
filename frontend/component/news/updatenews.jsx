@@ -23,13 +23,10 @@ const ModalUpdate = props =>{
     // const [titles, setTitles] = useState(null)
     const [details, setDetails] = useState('')
     const [test, setTest] = useState('')
-    console.log(test)
-    console.log(details)
 
     const onChange = (e) =>{
       setDetails(e.target.value)
     }
-
     const getimage = (event) =>{
         setImages(event.target.files[0])
         if (event.target.files[0]) {

@@ -42,9 +42,9 @@ export default ({ children, title = 'Air Condition Center' }) => {
         
     </Head>
       <nav className="navbar navbar-expand-lg nb">
-          {/* <div className="col-md-4 mt-1" > */}
-                <a className="navbar-brand cotext mt-1 home-test" href={'/'}>บริษัทวีซีแอร์เซอร์วิส</a>
-          {/* </div> */}
+              <a className="navbar-brand cotext mt-1 home-test xl-auto" href={'/'}>
+                <span className="row"><h2 className="h">VC</h2> <h3 className="mt-3 ml-1">Air service</h3></span>
+                </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="fas fa-bars"></span>
           </button>
@@ -53,9 +53,9 @@ export default ({ children, title = 'Air Condition Center' }) => {
               <div className="col-md-4"></div>
             <div className="col-md-7">
               <ul className="navbar-nav">
-                <LinkActive1 title="หน้าหลัก" to={'/'} />
-                <LinkActive1 title="โปรโมชั่น" to="/home/news"/>
-                <LinkActive1 title="รายการจองคิว" to="/home/repostreservation" />
+                <LinkActive1 title="Home" to={'/'} />
+                <LinkActive1 title="Promotion" to="/home/news"/>
+                <LinkActive1 title="Booking list" to="/home/repostreservation"/>
               </ul>
             </div>
           <div className="col-md-1">
@@ -80,8 +80,8 @@ export default ({ children, title = 'Air Condition Center' }) => {
         <div className="col-md-3" style={{fontSize:'20px'}}>
           <h3>บริการของเรา</h3>
             <ul className="navbar-nav">
-              <p ><Linkfooter title="> บริการล้างเครื่องปรัปอากาศ" to="/home/clean" /></p>
-              <p ><Linkfooter title="> บริการซ่อมเครื่องปรับอากาศ" to="/home/repair" /></p>
+              <p><Linkfooter title="> บริการล้างเครื่องปรัปอากาศ" to="/home/clean" /></p>
+              <p><Linkfooter title="> บริการซ่อมเครื่องปรับอากาศ" to="/home/repair" /></p>
               <p><Linkfooter title="> บริการติดตั้งเครื่องปรับอากาศ" to="/home/installair" /></p>
             </ul>
           </div>

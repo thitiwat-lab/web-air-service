@@ -54,8 +54,8 @@ const ModalCreate = props =>{
         try{
           const df = new FormData()
           df.append('filedname',images)
-          df.append('detail',details)
           await axios({
+            // url:'http://128.199.127.236:3001/api/news/upload',
             url:'http://localhost:3001/news/upload',
             method:'post',
             headers: {
@@ -73,7 +73,6 @@ const ModalCreate = props =>{
           setVal()
          })
         }catch (error) {
-          console.log(error)
     HandleAuth(error)
   }
 }

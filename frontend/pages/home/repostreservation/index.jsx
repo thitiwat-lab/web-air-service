@@ -11,8 +11,6 @@ let CalendarComponent
 
 const FullCalendar = (props) =>{
   const [calendarLoaded, setCalendarLoaded] = useState(false)
-
-
   useEffect(() => {
     try{
       CalendarComponent = dynamic({
@@ -27,9 +25,7 @@ const FullCalendar = (props) =>{
       })
       setCalendarLoaded(true)
     }catch(error){
-
     }
-    
   })
   let showCalendar = (props) => {
     if ( !calendarLoaded ) return <div>Loading ...</div>
@@ -46,7 +42,6 @@ const FullCalendar = (props) =>{
       </div>
   )
 }
-
 export default () => {
   const [reservation, setReservation] =useState([])
 

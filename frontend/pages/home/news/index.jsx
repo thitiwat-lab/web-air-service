@@ -67,12 +67,15 @@ export default () => {
               <div id="carouselExampleControls" className="carousel slide mt-3 mb-3" data-ride="carousel">
                 <div className="carousel-inner">
                         <div className="carousel-item active " >
+                        {/* <img src={"http://128.199.127.236:3001/api/banner/images/" + t} className="d-block w-100 carousel-body-img" alt="..."/> */}
                         <img src={"http://localhost:3001/banner/images/" + t} className="d-block w-100 carousel-body-img" alt="..."/>
                       </div>
                       <div className="carousel-item" >
+                      {/* <img src={"http://128.199.127.236:3001/api/banner/images/" + t1} className="d-block w-100 carousel-body-img" alt="..."/> */}
                         <img src={"http://localhost:3001/banner/images/" + t1} className="d-block w-100 carousel-body-img" alt="..."/>
                       </div>
                       <div className="carousel-item" >
+                      {/* <img src={"http://128.199.127.236:3001/api/banner/images/" + t2} className="d-block w-100 carousel-body-img" alt="..."/> */}
                         <img src={"http://localhost:3001/banner/images/" + t2} className="d-block w-100 carousel-body-img" alt="..."/>
                       </div>
                 </div>
